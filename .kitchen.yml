@@ -1,0 +1,24 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: puppet_apply
+  manifests_path: manifests
+  modules_path: modules
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-12.04
+    driver:
+      box: http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210-nocm.box
+
+suites:
+  - name: default
+    provisioner:
+      manifest: test_lamp.pp
+  - name: user
+    provisioner:
+      manifest: test_user.pp
