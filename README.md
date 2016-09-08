@@ -14,13 +14,15 @@ provisioner:
 ```
 
 You can specify multiple suites, you'll just need to create a test manifest file to apply the things you want to run for that suite.
-```suites:
+```
+suites:
   - name: default
     provisioner:
       manifest: test_lamp.pp
   - name: user
     provisioner:
-      manifest: test_user.pp```
+      manifest: test_user.pp
+```
 
 More info:
 kitchen-puppet -> https://github.com/neillturner/kitchen-puppet/
